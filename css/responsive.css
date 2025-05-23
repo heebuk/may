@@ -1,0 +1,380 @@
+/* Additional Responsive Styles */
+
+/* Tablet Portrait */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .navbar {
+        height: 12vh;
+    }
+    
+    .hero {
+        padding-top: 12vh;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-container {
+        gap: 3rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablet Landscape and Small Desktop */
+@media (max-width: 1200px) and (min-width: 1025px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .hero-title {
+        font-size: 3.25rem;
+    }
+    
+    .nav-menu {
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile Landscape */
+@media (max-width: 768px) and (orientation: landscape) {
+    .navbar {
+        height: 8vh;
+    }
+    
+    .hero {
+        padding-top: 8vh;
+        min-height: 100vh;
+    }
+    
+    .nav-menu {
+        top: 8vh;
+        height: calc(100vh - 8vh);
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    
+    .hero-image {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Large Mobile */
+@media (max-width: 480px) and (min-width: 376px) {
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    
+    .nav-link {
+        padding: 0.875rem;
+        font-size: 1.125rem;
+    }
+    
+    .skill-card {
+        padding: 1.75rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 375px) {
+    .navbar {
+        height: 8vh;
+    }
+    
+    .hero {
+        padding-top: 8vh;
+    }
+    
+    .nav-menu {
+        top: 8vh;
+        height: calc(100vh - 8vh);
+        padding-top: 1rem;
+    }
+    
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-title .greeting {
+        font-size: 1.125rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .hero-image {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .skill-card {
+        padding: 1.5rem;
+    }
+    
+    .portfolio-card {
+        margin: 0 -0.75rem;
+        border-radius: 0;
+    }
+    
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+    }
+    
+    .nav-link {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+    
+    .logo-text {
+        font-size: 1.25rem;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-image {
+        background-size: contain;
+    }
+    
+    .portfolio-image img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .hamburger,
+    .scroll-indicator,
+    .hero-buttons,
+    .portfolio-links,
+    .social-links {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: #000;
+        background: #fff;
+    }
+    
+    .hero {
+        padding-top: 0;
+        min-height: auto;
+        page-break-after: always;
+    }
+    
+    .section-title {
+        font-size: 18pt;
+        margin-bottom: 12pt;
+    }
+    
+    .portfolio-card,
+    .skill-card {
+        break-inside: avoid;
+        margin-bottom: 24pt;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .scroll-indicator {
+        animation: none;
+    }
+    
+    .code-animation {
+        animation: none;
+    }
+    
+    .code-line {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: #f8fafc;
+        --text-secondary: #cbd5e1;
+        --text-light: #94a3b8;
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --border-color: #334155;
+        --border-light: #475569;
+    }
+    
+    .navbar {
+        background: rgba(15, 23, 42, 0.95);
+        border-bottom-color: var(--border-color);
+    }
+    
+    .navbar.scrolled {
+        background: rgba(15, 23, 42, 0.98);
+    }
+    
+    .skill-card,
+    .portfolio-card,
+    .profile-card {
+        background: var(--bg-secondary);
+        border-color: var(--border-color);
+    }
+    
+    .nav-menu {
+        background: rgba(15, 23, 42, 0.98);
+    }
+    
+    .hero::before {
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23334155" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    }
+}
+
+/* Animation Utilities for Enhanced Responsive Experience */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Utility Classes for Responsive Design */
+.hide-mobile {
+    display: block;
+}
+
+.show-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+    
+    .show-mobile {
+        display: block !important;
+    }
+}
+
+.text-center-mobile {
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .text-center-mobile {
+        text-align: center !important;
+    }
+}
+
+/* Enhanced Touch Targets for Mobile */
+@media (max-width: 768px) {
+    .nav-link,
+    .btn,
+    .social-link,
+    .portfolio-link {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .hamburger {
+        min-height: 44px;
+        min-width: 44px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Accessibility Improvements for Responsive Design */
+@media (max-width: 768px) {
+    /* Increase font sizes for better mobile readability */
+    body {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+    
+    .nav-link {
+        font-size: 1.125rem;
+        font-weight: 600;
+    }
+    
+    .btn {
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 1rem 2rem;
+    }
+    
+    /* Improve spacing for touch interaction */
+    .nav-item {
+        margin: 0.25rem 0;
+    }
+    
+    .hero-buttons {
+        gap: 1.25rem;
+    }
+    
+    .social-links {
+        gap: 1.25rem;
+    }
+} 
